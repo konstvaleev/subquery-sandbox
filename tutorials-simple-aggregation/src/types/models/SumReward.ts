@@ -14,7 +14,7 @@ export class SumReward implements Entity {
 
     public id: string;
 
-    public accountReward: bigint;
+    public totalReward: bigint;
 
     public blockheight: number;
 

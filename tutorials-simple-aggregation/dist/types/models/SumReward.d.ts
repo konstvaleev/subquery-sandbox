@@ -2,7 +2,7 @@ import { Entity, FunctionPropertyNames } from "@subql/types";
 export declare class SumReward implements Entity {
     constructor(id: string);
     id: string;
-    accountReward: bigint;
+    totalReward: bigint;
     blockheight: number;
     save(): Promise<void>;
     static remove(id: string): Promise<void>;

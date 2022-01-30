@@ -2,5 +2,7 @@
 
 // Auto-generated , DO NOT EDIT
 
+export {StakingReward} from "./StakingReward"
+
 export {SumReward} from "./SumReward"
 
