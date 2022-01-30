@@ -11,8 +11,14 @@ dataSources:
     startBlock: 7000000
     mapping:
       handlers:
+        - handler: handleSumRewarded
+          kind: substrate/EventHandler
+          filter:
+            module: staking
+            method: Rewarded
         - handler: handleStakingRewarded
           kind: substrate/EventHandler
           filter:
             module: staking
             method: Rewarded
+
