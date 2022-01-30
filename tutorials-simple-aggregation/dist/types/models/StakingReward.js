@@ -26,6 +26,10 @@ class StakingReward {
             return;
         }
     }
+    static async getByAccountId(accountId) {
+        const records = await store.getByField('StakingReward', 'accountId', accountId);
+        return records.map(record => StakingReward.create(record));
+    }
     static create(record) {
         (0, assert_1.default)(typeof record.id === 'string', "id must be provided");
         let entity = new StakingReward(record.id);

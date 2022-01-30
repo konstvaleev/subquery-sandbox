@@ -14,7 +14,7 @@ export class StakingReward implements Entity {
 
     public id: string;
 
-    public account: string;
+    public accountId: string;
 
     public balance: bigint;
 
@@ -41,6 +41,13 @@ export class StakingReward implements Entity {
         }
     }
 
+
+    static async getByAccountId(accountId: string): Promise<StakingReward[] | undefined>{
+      
+      const records = await store.getByField('StakingReward', 'accountId', accountId);
+      return records.map(record => StakingReward.create(record));
+      
+    }
 
 
     static create(record: Partial<Omit<StakingReward, FunctionPropertyNames<StakingReward>>> & Entity): StakingReward {
